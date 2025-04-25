@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ID-Future Dashboard</title>
+
+  <!-- UI & fonts -->
+  <script type="module"
+    src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.0/dist/shoelace.js"></script>
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.0/dist/themes/dark.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Plotly -->
+  <script src="https://cdn.plot.ly/plotly-2.30.0.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1 class="glow">ID-Future Dashboard — California Infectious Disease</h1>
+
+  <div id="controls">
+    <sl-select id="disease" label="Disease" placeholder="Choose disease"></sl-select>
+    <sl-select id="sex" label="Sex">
+      <sl-option value="Total" selected>Total</sl-option>
+      <sl-option value="Female">Female</sl-option>
+      <sl-option value="Male">Male</sl-option>
+    </sl-select>
+    <sl-select id="county" label="Highlight county" placeholder="All"></sl-select>
+  </div>
+
+  <div id="chart"></div>
+  <div id="map"></div>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
