@@ -94,7 +94,7 @@ function drawMap(data, dis, highlight){
   Plotly.react('map',[
       {type:'choropleth', geojson:geo, featureidkey:'properties.name',
        locations:locs, z, colorscale:'Viridis',
-       colorbar:{title:'Cases'}, marker:{line:{color:'#111',width:0.5)}},
+       colorbar:{title:'Cases'}, marker:{line:{color:'#111',width:0.5}},
       ...highlightTrace
     ],
     {geo:{scope:'usa',center:{lat:37.3,lon:-119.5},fitbounds:'locations',
