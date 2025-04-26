@@ -1,35 +1,55 @@
-/* style.css – neon sci-fi theme for ID-Future Dashboard */
-@import url('https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.0/dist/themes/dark.css');
-
+/* Neon sci-fi theme */
 :root{
-  --brand-cyan:#18FFFF;
-  --brand-purple:#B388FF;
-  --bg-gradient: radial-gradient(ellipse at top,#111 0%,#000 80%);
-  --font-stack: 'Orbitron', 'Segoe UI', sans-serif;
+  --cyan:#18ffff;
+  --purple:#b388ff;
+  --bg: radial-gradient(ellipse at top,#111 0%,#000 80%);
+  --font:'Orbitron','Segoe UI',sans-serif;
 }
+
+*{box-sizing:border-box}
 
 body{
-  margin:0; min-height:100vh; color:#cfd8dc;
-  font-family:var(--font-stack);
-  background:var(--bg-gradient);
-  display:flex; flex-direction:column; align-items:center;
+  margin:0;
+  min-height:100vh;
+  padding:0 1rem 2rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  font-family:var(--font);
+  color:#cfd8dc;
+  background:var(--bg);
 }
 
-h1{font-weight:700;color:var(--brand-cyan);letter-spacing:.05em;margin:1rem 0}
+h1{
+  margin:1rem 0 1.5rem;
+  font-size:clamp(1.4rem,2.5vw,2.2rem);
+  font-weight:700;
+  color:var(--cyan);
+  text-align:center;
+  letter-spacing:.04em;
+}
+
+.glow{
+  text-shadow:0 0 6px var(--cyan),0 0 18px var(--purple);
+}
 
 #controls{
-  display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1rem
+  display:flex;
+  flex-wrap:wrap;
+  gap:1rem;
+  margin-bottom:1rem;
+}
+
+sl-select::part(base){
+  background:#212121;
+  border-color:var(--purple);
 }
 
 sl-select::part(label){color:#90caf9}
-sl-select::part(base){
-  border-color:var(--brand-purple);
-  background:#212121;
-}
-sl-option::part(base){background:#212121;color:#e0e0e0}
 
-#chart,#map{width:100%;max-width:1100px;height:450px;margin-top:1rem}
-
-.glow{
-  text-shadow:0 0 6px var(--brand-cyan),0 0 20px var(--brand-purple);
+#chart,#map{
+  width:100%;
+  max-width:1100px;
+  height:450px;
+  margin-top:1rem;
 }
